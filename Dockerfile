@@ -10,8 +10,10 @@ RUN add-apt-repository ppa:ondrej/php -y
 RUN apt-get update
 RUN apt-get install php8.0
 
+
 # jalankan apache
 RUN /etc/init.d/apache2 start
+RUN service apache2 restart
 
 # copy file dari komputer ke container
 COPY . /laravel-app
